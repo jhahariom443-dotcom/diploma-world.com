@@ -1,0 +1,112 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Study Material Selector</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: url('https://images.unsplash.com/photo-1503264116251-35a269479413?auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #007acc;
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      font-size: 28px;
+    }
+    main {
+      padding: 40px;
+      text-align: center;
+    }
+    h2 {
+      margin-top: 30px;
+      color: #004080;
+    }
+    .section {
+      margin: 30px 0;
+    }
+    button {
+      margin: 10px;
+      padding: 12px 24px;
+      font-size: 16px;
+      background-color: #28a745;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #218838;
+    }
+    .link-buttons a {
+      display: inline-block;
+      margin: 10px;
+      padding: 12px 24px;
+      background-color: #007bff;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+    }
+    .link-buttons a:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <header>📚 Study Material Selector</header>
+  <main>
+    <div class="section" id="branchSection">
+      <h2>Select Branch</h2>
+      <button onclick="selectBranch('civil')">Civil</button>
+      <button onclick="selectBranch('cs')">Computer Science</button>
+      <button onclick="selectBranch('electrical')">Electrical</button>
+      <button onclick="selectBranch('electronics')">Electronics</button>
+      <button onclick="selectBranch('mechanical')">Mechanical</button>
+    </div>
+
+    <div class="section" id="semesterSection" style="display: none;">
+      <h2>Select Semester</h2>
+      <button onclick="selectSemester(1)">1st Semester</button>
+      <button onclick="selectSemester(2)">2nd Semester</button>
+      <button onclick="selectSemester(3)">3rd Semester</button>
+      <button onclick="selectSemester(4)">4th Semester</button>
+      <button onclick="selectSemester(5)">5th Semester</button>
+      <button onclick="selectSemester(6)">6th Semester</button>
+    </div>
+
+    <div class="section link-buttons" id="resourcesSection" style="display: none;">
+      <h2>📁 Study Resources</h2>
+      <a id="syllabusLink" href="#" target="_blank">📘 Syllabus</a>
+      <a id="booksLink" href="#" target="_blank">📚 Books</a>
+      <a id="notesLink" href="#" target="_blank">📝 Notes</a>
+      <a id="questionsLink" href="#" target="_blank">❓ Questions</a>
+    </div>
+    
+</main>
+
+  <script>
+    let selectedBranch = '';
+    let selectedSemester = '';
+    function selectBranch(branch) {
+      selectedBranch = branch;
+      document.getElementById('semesterSection').style.display = 'block';
+      document.getElementById('resourcesSection').style.display = 'none';
+    }
+    function selectSemester(semester) {
+      selectedSemester = semester;
+      document.getElementById('resourcesSection').style.display = 'block';
+      const basePath = `materials/${selectedBranch}/sem${selectedSemester}/`;
+      document.getElementById('syllabusLink').href = basePath + 'syllabus.pdf';
+      document.getElementById('booksLink').href = basePath + 'books.html';
+      document.getElementById('notesLink').href = basePath + 'notes.html';
+      document.getElementById('questionsLink').href = basePath + 'questions.html';
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+1<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attractive Webpage</title>
+    <link rel="stylesheet" href="styles.css">
+    
+</head>
+<body>
+    <header>
+        <div class="login">
+            <marquee direction="left">🚀 Welcome! This website is dedicated to Polytechnic students. 🚀</marquee>
+        </div>
+        <nav class="menubar">
+            <button onclick="changeColor()">🎨 Change Background</button>
+            <button id="login">🔐 Login</button>
+            <button id="content">📚 Content</button>
+            <button id="about-us">👨‍🏫 About Us</button>
+            <button id="contact-us">📞 Contact Us</button>
+            <button id="link">&#128279;Useful links for students</button>
+        </nav>
+    </header>
+
+    <main>
+        <section class="welcome">
+            <h1>Welcome to Our Beautiful Webpage</h1>
+            <p>Your go-to place for everything Polytechnic.</p>
+            </section>
+    </main>
+    <img src="logo.jpg" alt="My photo"width="300"height="200">
+    <footer>
+        <p>© 2025 Polytechnic Webpage. All rights reserved.</p>
+        <nav class="name">
+            <h1>DEVELOP BY:</h1>
+            <P>HARIOM JHA</P>
+        </nav>
+    </footer>
+
+     <script src="script.js"></script> <!-- Linking external JavaScript -->
+     <script>
+        alert("Due to some issue in this time this website is only enegiable for one to third semester")
+        document.getElementById('link').addEventListener('click', function () {
+    window.location.href = 'link.html';
+});
+
+document.getElementById('content').addEventListener('click', function () {
+    window.location.href = 'home.html';
+});
+
+     </script>
+</body>
+</html>
